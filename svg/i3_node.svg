@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="icon icon-tabler icon-tabler-cube"
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   stroke-width="1.5"
+   stroke="#9f9f9f"
+   fill="none"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   version="1.1"
+   id="svg6779"
+   sodipodi:docname="i3_node.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:export-filename="../.minetest/mods/i3/textures/i3_node.png"
+   inkscape:export-xdpi="256"
+   inkscape:export-ydpi="256"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6783" />
+  <sodipodi:namedview
+     id="namedview6781"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="17.25"
+     inkscape:cx="9.8550725"
+     inkscape:cy="12.985507"
+     inkscape:window-width="1916"
+     inkscape:window-height="1037"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6779" />
+  <path
+     stroke="none"
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path6769" />
+  <g
+     id="thecube">
+    <path
+       d="M21 16.008v-8.018a1.98 1.98 0 0 0 -1 -1.717l-7 -4.008a2.016 2.016 0 0 0 -2 0l-7 4.008c-.619 .355 -1 1.01 -1 1.718v8.018c0 .709 .381 1.363 1 1.717l7 4.008a2.016 2.016 0 0 0 2 0l7 -4.008c.619 -.355 1 -1.01 1 -1.718z"
+       id="path6771" />
+    <path
+       d="M12 22v-10"
+       id="path6773" />
+    <path
+       d="M12 12l8.73 -5.04"
+       id="path6775" />
+    <path
+       d="M3.27 6.96l8.73 5.04"
+       id="path6777" />
+  </g>
+</svg>
