@@ -69,11 +69,11 @@ if core.global_exists"armor" then
 	i3.modules.armor = true
 
 	local group_indexes = {
-		{"armor_head",   "i3_heavy_helmet"},
+		{"armor_head",   "i3_heavy_armor"},
 		{"armor_torso",  "i3_heavy_armor"},
-		{"armor_legs",   "i3_heavy_leggings"},
-		{"armor_feet",   "i3_heavy_boots"},
-		{"armor_shield", "i3_heavy_shield"},
+		{"armor_legs",   "i3_heavy_armor"},
+		{"armor_feet",   "i3_heavy_armor"},
+		{"armor_shield", "i3_heavy_armor"},
 	}
 
 	local function check_group(def, group)
