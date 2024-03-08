@@ -606,7 +606,7 @@ local function show_settings(fs, data)
 
 			hypertext(2.2, 9.9, 6, 0.6, "home_pos", fmt("<global size=16><center>%s</center>", str))
 			fs("style[set_home;padding=20,10,-210,-10;fgimg=%s;fgimg_hovered=%s]", PNG.home_px, PNG.home_px_hover)
-			image_button(4.1, 10.4, 2.2, 0.7, "", "set_home", "")
+			image_button(4.1, 10.4, 3.2, 0.7, "", "set_home", "")
 			label(4.9, 10.75, "Set home")
 
 		elseif show_style then
