@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   width="800px"
+   height="800px"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg283"
+   sodipodi:docname="i3_armor_1.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:export-filename="../textures/i3_armor_1.png"
+   inkscape:export-xdpi="7.6799998"
+   inkscape:export-ydpi="7.6799998"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs287" />
+  <sodipodi:namedview
+     id="namedview285"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.5175"
+     inkscape:cx="499.51691"
+     inkscape:cy="417.3913"
+     inkscape:window-width="1916"
+     inkscape:window-height="1037"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg283" />
+  <path
+     style="color:#000000;fill:#9f9f9f;fill-opacity:1;-inkscape-stroke:none"
+     d="m 12,1.3691406 c 4.771404,0 8.630859,3.8594523 8.630859,8.6308594 v 10 c 1.13e-4,0.240134 -0.132847,0.457113 -0.347656,0.564453 l -4,2 c -0.244419,0.121982 -0.537405,0.07607 -0.730469,-0.117187 l -2,-2 C 13.434198,20.328764 13.369177,20.167611 13.369141,20 v -3 c -1.13e-4,-0.240134 0.132847,-0.457113 0.347656,-0.564453 l 1.652344,-0.826172 v -3.587891 l -3.085938,1.548829 c -0.177385,0.08864 -0.386859,0.08803 -0.564453,0 h -0.002 L 8.6308594,12.021484 v 3.587891 l 1.6523436,0.826172 c 0.214809,0.10734 0.347769,0.324319 0.347656,0.564453 v 3 c -3.6e-5,0.167611 -0.06506,0.328764 -0.183593,0.447266 l -2.0000004,2 c -0.1925601,0.192749 -0.484491,0.23797 -0.7285156,0.117187 l -4.0019531,-2 C 3.5019884,20.457113 3.3690287,20.240134 3.3691406,20 V 10 C 3.3691406,5.2285929 7.2285962,1.3691406 12,1.3691406 Z m 0,1.2617188 C 7.9348569,2.6308594 4.6308594,5.934854 4.6308594,10 v 9.609375 l 3.2421875,1.625 1.4960937,-1.496094 V 17.390625 L 7.7167969,16.564453 C 7.5019884,16.457113 7.3690287,16.240134 7.3691406,16 V 11 C 7.368915,10.515844 7.8480117,10.22074 8.28125,10.435547 L 12,12.294922 15.716797,10.435547 c 0.196075,-0.09784 0.4288,-0.08781 0.615234,0.02734 0.186857,0.115262 0.298806,0.317564 0.298828,0.537109 v 5 c 1.13e-4,0.240134 -0.132847,0.457113 -0.347656,0.564453 l -1.652344,0.826172 v 2.34375 l 1.496094,1.496094 3.242188,-1.621094 V 10 C 19.369141,5.9348539 16.065143,2.6308594 12,2.6308594 Z"
+     id="path4649"
+     sodipodi:nodetypes="sscccccccccccccccccccccccssssccccccccccccccccccss" />
+</svg>
