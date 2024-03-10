@@ -76,7 +76,7 @@ local function _load(path, line, data, t)
 		data = compile(data)
 	end
 
-	local l, err = loadstring(data)
+	local l, err = loadstring(data, "@" .. path)
 
 	if not l then
 		local err_line = tonumber(err:match(":(%d+):"))
