@@ -1576,7 +1576,7 @@ local function get_items_fs(fs, data, player, full_height)
 			local item_btn = fmt("item_image_button", X, Y, size, size, name, item, "")
 
 			if recipe_filter_set() and data.itab == 1 then
-				if data.items_progress[item] then
+				if data.items_progress and data.items_progress[item] then
 					insert(fs, item_btn)
 				else
 					local col = "^\\[colorize:#232428^\\[opacity:245"
