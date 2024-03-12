@@ -1,11 +1,18 @@
-![logo](https://user-images.githubusercontent.com/7883281/145490041-d91d6bd6-a654-438d-b208-4d5736845ab7.png)
+```
+    ██╗██████╗
+    ██║╚════██╗
+    ██║ █████╔╝
+    ██║ ╚═══██╗
+    ██║██████╔╝
+    ╚═╝╚═════╝
+```
 
-[![GitHub Release](https://img.shields.io/github/release/minetest-mods/i3.svg?style=flat)]() ![workflow](https://github.com/minetest-mods/i3/actions/workflows/luacheck.yml/badge.svg) [![ContentDB](https://content.minetest.net/packages/jp/i3/shields/downloads/)](https://content.minetest.net/packages/jp/i3/) [![PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/jpg84240)
+[![GitHub Release](https://img.shields.io/github/release/mt-historical/i3.svg?style=flat)]() ![workflow](https://github.com/mt-historical/i3/actions/workflows/luacheck.yml/badge.svg) [![ContentDB](https://content.minetest.net/packages/jp/i3/shields/downloads/)](https://content.minetest.net/packages/jp/i3/)
 
 #### **`i3`** is a next-generation inventory for Minetest.
 
 This mod features a modern, powerful inventory menu with a good user experience.
-**`i3`** provides a rich [**API**](https://github.com/minetest-mods/i3/blob/master/API.md) for mod developers who want to extend it.
+**`i3`** provides a rich [**API**](./API.md) for mod developers who want to extend it.
 
 This mod requires **Minetest 5.6+**
 
@@ -50,8 +57,6 @@ You can also use the font size slider in the inventory, settings window.
 Thus, most chests will be unadapted to this inventory size.
 The `i3`  inventory is 9 slots wide by default, such as Minecraft.
 
-Report bugs on the [**Bug Tracker**](https://github.com/minetest-mods/i3/issues).
+Report bugs on the [**Bug Tracker**](https://github.com/mt-historical/i3/issues).
 
-**Video review on YouTube:** https://www.youtube.com/watch?v=Xd14BCdEZ3o
-
-![Preview](https://user-images.githubusercontent.com/7883281/185755315-23c2fffa-203d-4115-9dc3-576c92615733.png)
+![Preview](./screenshot.png)
