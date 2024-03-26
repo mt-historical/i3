@@ -140,7 +140,7 @@ local function inv_fields(player, data, fields)
 		end
 
 		safe_teleport(player, str_to_pos(data.home))
-		msg(name, S"Welcome back home!")
+		msg(name, S("Welcome back home!"))
 
 	elseif fields.set_home then
 		data.home = pos_to_str(player:get_pos(), 1)
@@ -180,7 +180,7 @@ local function inv_fields(player, data, fields)
 		for _, v in ipairs(data.waypoints) do
 			if vec_round(pos) == vec_round(str_to_pos(v.pos)) then
 				play_sound(name, "i3_cannot", 0.8)
-				return msg(name, S"You already have set a waypoint at this position")
+				return msg(name, S("You already have set a waypoint at this position"))
 			end
 		end
 
@@ -423,7 +423,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 	local name = player:get_player_name()
 
 	if formname == "i3_outdated" then
-		return false, core.kick_player(name, S"Your Minetest client needs updating (www.minetest.net)")
+		return false, core.kick_player(name, S("Your Minetest client needs updating") .. " (www.minetest.net)")
 	elseif formname ~= "" then
 		return false
 	end

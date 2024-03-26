@@ -28,7 +28,7 @@ function core.is_creative_enabled(name)
 end
 
 local S = core.get_translator"i3"
-local ES = function(...) return core.formspec_escape(S(...)) end
+local FS = function(...) return core.formspec_escape(S(...)) end
 
 local function is_num(x)
 	return type(x) == "number"
@@ -786,7 +786,7 @@ local _ = {
 
 	-- i18n
 	S = S,
-	ES = ES,
+	FS = FS,
 	translate = core.get_translated_string,
 
 	-- String

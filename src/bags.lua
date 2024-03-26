@@ -1,7 +1,7 @@
 local set_fs = i3.set_fs
 
 IMPORT("get_bag_description", "ItemStack")
-IMPORT("S", "ES", "fmt", "msg", "slz", "dslz")
+IMPORT("S", "FS", "fmt", "msg", "slz", "dslz")
 IMPORT("get_group", "play_sound", "get_detached_inv", "create_inventory")
 
 local function get_content(content)
@@ -28,9 +28,9 @@ local function init_bags(player)
 			end
 
 			if not empty then
-				msg(name, S"There is already a bag")
+				msg(name, S("There is already a bag"))
 			else
-				msg(name, S"This is not a bag")
+				msg(name, S("This is not a bag"))
 			end
 
 			return 0, play_sound(name, "i3_cannot", 0.8)
@@ -91,7 +91,7 @@ local function init_bags(player)
 			local bag_size = get_group(bagstack:get_name(), "bag")
 			local percent = fmt("%d", (c * 100) / (bag_size * 4))
 
-			meta:set_string("description", ES("@1 (@2% full)", desc, percent))
+			meta:set_string("description", FS("@1 (@2% full)", desc, percent))
 			meta:set_string("content", slz(t))
 		end
 

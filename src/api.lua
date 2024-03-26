@@ -1,6 +1,7 @@
 local http = ...
 local make_fs, get_inventory_fs = i3.files.gui()
 
+IMPORT("FS")
 IMPORT("sorter", "sort_inventory", "play_sound")
 IMPORT("sort", "concat", "copy", "insert", "remove")
 IMPORT("get_player_by_name", "add_hud_waypoint", "init_hud_notif")
@@ -194,7 +195,7 @@ function i3.new_tab(name, def)
 end
 
 i3.new_tab("inventory", {
-	description = S"Inventory",
+	description = S("Inventory"),
 	formspec = get_inventory_fs,
 	slots = true,
 })
@@ -258,12 +259,12 @@ function i3.override_tab(name, newdef)
 end
 
 i3.register_craft_type("digging", {
-	description = S"Digging",
+	description = S("Digging"),
 	icon = "i3_steelpick.png",
 })
 
 i3.register_craft_type("digging_chance", {
-	description = S"Digging (by chance)",
+	description = S("Digging (by chance)"),
 	icon = "i3_mesepick.png",
 })
 
@@ -360,7 +361,7 @@ function i3.add_sorting_method(name, def)
 end
 
 i3.add_sorting_method("alphabetical", {
-	description = S"Sort items by name (A-Z)",
+	description = S("Sort items by name (A-Z)"),
 	func = function(list, data)
 		sorter(list, data, 1)
 		return list
@@ -368,7 +369,7 @@ i3.add_sorting_method("alphabetical", {
 })
 
 i3.add_sorting_method("numerical", {
-	description = S"Sort items by number of items per stack",
+	description = S("Sort items by number of items per stack"),
 	func = function(list, data)
 		sorter(list, data, 2)
 		return list
@@ -475,7 +476,7 @@ function i3.remove_minitab(name)
 end
 
 i3.new_minitab("all", {
-	description = "All",
+	description = FS("All"),
 
 	sorter = function()
 		return true
@@ -483,7 +484,7 @@ i3.new_minitab("all", {
 })
 
 i3.new_minitab("nodes", {
-	description = "Nodes",
+	description = FS("Nodes"),
 
 	sorter = function(item)
 		return core.registered_nodes[item]
@@ -491,7 +492,7 @@ i3.new_minitab("nodes", {
 })
 
 i3.new_minitab("items", {
-	description = "Items",
+	description = FS("Items"),
 
 	sorter = function(item)
 		return core.registered_craftitems[item] or core.registered_tools[item]
