@@ -736,7 +736,7 @@ local function get_inventory_fs(player, data, fs)
 	--	fs"style[player_model;bgcolor=black]"
 		model(0.2, 0.2, armor_skin and 4 or 3.4, ctn_hgt,
 			"player_model", props.mesh, textures, "0,-150", "false", "false",
-			true_table(anim) and fmt("%u,%u;30", anim.x, anim.y) or "")
+			true_table(anim) and fmt("%u,%u%s", anim.x, anim.y, data.fs_version >= 5 and ";30" or "") or "")
 	else
 		local size = 2.5
 		image(0.7, 0.2, size, size * props.visual_size.y, props.textures[1])
