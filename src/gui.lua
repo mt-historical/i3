@@ -736,7 +736,7 @@ local function get_inventory_fs(player, data, fs)
 	--	fs"style[player_model;bgcolor=black]"
 		model(0.2, 0.2, armor_skin and 4 or 3.4, ctn_hgt,
 			"player_model", props.mesh, textures, "0,-150", "false", "false",
-			true_table(anim) and fmt("%u,%u%s", anim.x, anim.y, data.fs_version >= 5 and ";30" or "") or "")
+			true_table(anim) and fmt("%u,%u;30", anim.x, anim.y) or "")
 	else
 		local size = 2.5
 		image(0.7, 0.2, size, size * props.visual_size.y, props.textures[1])
@@ -1751,7 +1751,7 @@ local function make_fs(player, data)
 	local full_height = 12
 
 	fs("formspec_version[%u]size[%f,%f]no_prepend[]bgcolor[#0000]",
-		i3.settings.min_fs_version, data.inv_width + 8, full_height)
+		i3.settings.target_fs_version, data.inv_width + 8, full_height)
 
 	fs(styles)
 
