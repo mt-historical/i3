@@ -684,7 +684,7 @@ local function update_inv_size(player, data)
 	player:hud_set_hotbar_itemcount(data.hotbar_len)
 
 	core.after(0, function()
-		player:hud_set_hotbar_image(data.legacy_inventory and "gui_hotbar.png" or "i3_hotbar.png")
+		player:hud_set_hotbar_image(data.legacy_inventory and (core.global_exists("default") and "gui_hotbar.png" or "") or "i3_hotbar.png")
 	end)
 end
 
