@@ -614,7 +614,7 @@ local function reset_data(data)
 	data.show_setting  = "home"
 	data.items         = data.items_raw
 
-	if data.itab > 1 then
+	if data.itab and data.itab > 1 then
 		sort_by_category(data)
 	end
 end
