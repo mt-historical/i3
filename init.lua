@@ -11,7 +11,7 @@ print[[
 ]]
 
 local modpath = core.get_modpath"i3"
-local http = core.request_http_api()
+local http = core.request_http_api and core.request_http_api()
 local storage = core.get_mod_storage()
 local _loadfile = dofile(modpath .. "/src/preprocessor.lua")
 
