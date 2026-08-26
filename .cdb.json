@@ -1,0 +1,25 @@
+{
+	"$schema": "https://content.luanti.org/api/cdb_schema/",
+	"title": "I3",
+	"tags": [
+		"crafting",
+		"creative",
+		"gui",
+		"inventory",
+		"library",
+		"storage",
+		"survival",
+		"tools"
+	],
+	"type": "MOD",
+	"ai_disclosure": "NONE",
+	"dev_state": "MAINTENANCE_ONLY",
+	"license": "MIT",
+	"media_license": "Other (Free/Open)",
+	"short_description": "A Next Generation Inventory",
+	"repo": "https://github.com/mt-historical/i3",
+	"forum_url": "https://forum.luanti.org/viewtopic.php?t=26332",
+	"issue_tracker": "https://github.com/mt-historical/i3/issues/new/choose",
+	"translation_url": "https://translate.luanti.ch/engage/mt-mods/",
+	"website": "https://mt-mods.github.io/"
+}
