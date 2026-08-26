@@ -50,7 +50,7 @@ To use this mod in the best conditions:
 ## Troubleshooting
 
 If the inventory's font size is too big on certain setups (namely Windows 10/11 or 144 DPI display), you should lower the
-value of the setting `display_density_factor` in your `core.conf`. Note that the change is applied after restart.
+value of the setting `display_density_factor` in your `minetest.conf`. Note that the change is applied after restart.
 
 You can also use the font size slider in the inventory, settings window.
 

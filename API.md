@@ -443,4 +443,4 @@ given a number between 1 and 4.
 
 ---
 
-**[1]** Add `i3` to the `secure.http_mods` or `secure.trusted_mods` setting in `core.conf`.
+**[1]** Add `i3` to the `secure.http_mods` or `secure.trusted_mods` setting in `minetest.conf`.
