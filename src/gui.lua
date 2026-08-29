@@ -1751,7 +1751,7 @@ local function make_fs(player, data)
 	local full_height = 12
 
 	fs("formspec_version[%u]size[%f,%f]no_prepend[]bgcolor[#0000]",
-		i3.settings.target_fs_version, data.inv_width + 8, full_height)
+		data.fs_version, data.inv_width + 8, full_height)
 
 	fs(styles)
 
