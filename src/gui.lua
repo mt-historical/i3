@@ -395,8 +395,8 @@ local function get_bag_fs(fs, data, bag_size, yextra)
 		x, size, spacing = 1.7, 0.8, 0.1
 	end
 
-	fs("style_type[list;size=%f;spacing=%f]", size, spacing)
-	fs("list[detached:i3_bag_content_%s;main;%f,%f;4,%u;]", data.player_name, x, yextra + 1.3, bag_size)
+	fs("style_type[list;size=%g;spacing=%g]", size, spacing)
+	fs("list[detached:i3_bag_content_%s;main;%g,%g;4,%u;]", data.player_name, x, yextra + 1.3, bag_size)
 	fs"style_type[list;size=1;spacing=0.15]"
 end
 
@@ -428,10 +428,10 @@ local function get_container(fs, data, player, yoffset, ctn_len, award_list, awa
 		yoffset -= 0.5
 	end
 
-	fs("list[current_player;craft;%f,%f;3,3;]", 0, yoffset + 1.45)
+	fs("list[current_player;craft;%g,%g;3,3;]", 0, yoffset + 1.45)
 	image(3.47, yoffset + 2.69, 0.85, 0.85, PNG.arrow)
-	fs("list[current_player;craftpreview;%f,%f;1,1;]", 4.45, yoffset + 2.6)
-	fs("list[detached:i3_trash;main;%f,%f;1,1;]", 4.45, yoffset + 3.75)
+	fs("list[current_player;craftpreview;%g,%g;1,1;]", 4.45, yoffset + 2.6)
+	fs("list[detached:i3_trash;main;%g,%g;1,1;]", 4.45, yoffset + 3.75)
 	image(4.45, yoffset + 3.75, 1, 1, PNG.trash)
 
 	local yextra = damage_enabled and 5.5 or 5
@@ -465,7 +465,7 @@ local function get_container(fs, data, player, yoffset, ctn_len, award_list, awa
 		local armor_def = armor.def[data.player_name]
 		local _, armor_inv = armor:get_valid_player(player, "3d_armor")
 
-		fs("list[detached:%s_armor;armor;0,%f;5,1;]", esc_name, yextra + 0.7)
+		fs("list[detached:%s_armor;armor;0,%g;5,1;]", esc_name, yextra + 0.7)
 
 		for i = 1, 5 do
 			local stack = armor_inv:get_stack("armor", i)
@@ -649,7 +649,7 @@ local function show_settings(fs, data)
 			end
 
 			label(5.3, 10.4, FS("Sorting method:"))
-			fs("dropdown[%f,%f;2.6,0.5;dd_sorting_method;%s;%u;true]", 5.3, 10.6, concat(methods, ","), data.sort)
+			fs("dropdown[%g,%g;2.6,0.5;dd_sorting_method;%s;%u;true]", 5.3, 10.6, concat(methods, ","), data.sort)
 
 			local desc = i3.sorting_methods[data.sort].description
 			if desc then
@@ -703,12 +703,12 @@ local function get_slots(fs, data)
 		box(i * size + inv_x + (i * spacing), inv_y, size, size, "")
 	end
 
-	fs("style_type[list;size=%f;spacing=%f]", size, spacing)
-	fs("list[current_player;main;%f,%f;%u,1;]", inv_x, inv_y, hotbar_len)
+	fs("style_type[list;size=%g;spacing=%g]", size, spacing)
+	fs("list[current_player;main;%g,%g;%u,1;]", inv_x, inv_y, hotbar_len)
 
-	fs("style_type[list;size=%f;spacing=%f,%f]", size, spacing, legacy_inventory and 0.15 or spacing)
+	fs("style_type[list;size=%g;spacing=%g,%g]", size, spacing, legacy_inventory and 0.15 or spacing)
 
-	fs("list[current_player;main;%f,%f;%u,%u;%u]", inv_x, inv_y + (legacy_inventory and 1.25 or 1.15),
+	fs("list[current_player;main;%g,%g;%u,%u;%u]", inv_x, inv_y + (legacy_inventory and 1.25 or 1.15),
 		hotbar_len, data.inv_size / hotbar_len, hotbar_len)
 
 	fs"listring[current_player;craft]listring[current_player;main]"
@@ -787,11 +787,11 @@ local function get_inventory_fs(player, data, fs)
 	end
 
 	fs([[   scrollbaroptions[arrows=hide;thumbsize=%d;max=%d]
-		scrollbar[%f,0.2;0.2,%f;vertical;scrbar_inv;%u]
+		scrollbar[%g,0.2;0.2,%g;vertical;scrbar_inv;%u]
 		scrollbaroptions[arrows=default;thumbsize=0;max=1000]   ]],
 	(max_val * 4) / 12, max_val, 9.8, ctn_hgt, data.scrbar_inv)
 
-	fs("scroll_container[3.9,0.2;%f,%f;scrbar_inv;vertical]", ctn_len, ctn_hgt)
+	fs("scroll_container[3.9,0.2;%g,%g;scrbar_inv;vertical]", ctn_len, ctn_hgt)
 	get_container(fs, data, player, yoffset, ctn_len, award_list, awards_unlocked, award_list_nb, bag_size)
 	fs"scroll_container_end[]"
 end
@@ -1420,7 +1420,7 @@ local function get_header_items_fs(fs, data)
 			image(X + 0.4, 0.75, 3.4, 0.8, PNG.bg_goto)
 
 			fs"style[filter;font_size=16]"
-			fs("field[%f,%f;3,0.45;filter;;%s]", X + 0.6, 0.95, data.filter)
+			fs("field[%g,%g;3,0.45;filter;;%s]", X + 0.6, 0.95, data.filter)
 			fs"field_close_on_enter[filter;false]"
 		end
 
@@ -1456,7 +1456,7 @@ local function get_header_items_fs(fs, data)
 
 		if data.enable_search then
 			fs"style[filter;font_size=18]"
-			fs("field[%f,0.2;3.35,0.6;filter;;%s]", X + 0.85, ESC(data.filter))
+			fs("field[%g,0.2;3.35,0.6;filter;;%s]", X + 0.85, ESC(data.filter))
 			fs"field_close_on_enter[filter;false]"
 
 			if not true_str(data.filter) then
@@ -1492,7 +1492,7 @@ local function get_header_items_fs(fs, data)
 		box(X + 6.5, 1, 1, 0.45, "#bababa10")
 
 		fs("style[goto_page;font=mono,bold;font_size=16;textcolor=%s]", colors.yellow)
-		fs("field[%f,%f;1,0.45;goto_page;;%s]", X + 6.55, 1.05, data.pagenum)
+		fs("field[%g,%g;1,0.45;goto_page;;%s]", X + 6.55, 1.05, data.pagenum)
 		fs"field_close_on_enter[goto_page;false]"
 
 		fs"style_type[label;font_size=16;textcolor=#fff]"
@@ -1750,7 +1750,7 @@ local function make_fs(player, data)
 	data.inv_width = 10.23
 	local full_height = 12
 
-	fs("formspec_version[%u]size[%f,%f]no_prepend[]bgcolor[#0000]",
+	fs("formspec_version[%u]size[%g,%g]no_prepend[]bgcolor[#0000]",
 		data.fs_version, data.inv_width + 8, full_height)
 
 	fs(styles)
