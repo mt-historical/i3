@@ -28,7 +28,6 @@ i3 = {
 		max_favs = 6,
 		max_waypoints = 30,
 		min_fs_version = 4,
-		target_fs_version = 6,
 		item_btn_size = 1.1,
 		drop_bag_on_die = true,
 		wielditem_fade_after = 3,
