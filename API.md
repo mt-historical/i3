@@ -2,15 +2,15 @@
 
 ### Table of Contents
 
-1. [**Tabs**](https://github.com/minetest-mods/i3/blob/main/API.md#tabs)
-2. [**Recipes**](https://github.com/minetest-mods/i3/blob/main/API.md#recipes)
-3. [**Minitabs**](https://github.com/minetest-mods/i3/blob/main/API.md#minitabs)
-4. [**Recipe filters**](https://github.com/minetest-mods/i3/blob/main/API.md#recipe-filters)
-5. [**Search filters**](https://github.com/minetest-mods/i3/blob/main/API.md#search-filters)
-6. [**Sorting methods**](https://github.com/minetest-mods/i3/blob/main/API.md#sorting-methods)
-7. [**Item list compression**](https://github.com/minetest-mods/i3/blob/main/API.md#item-list-compression)
-8. [**Waypoints**](https://github.com/minetest-mods/i3/blob/main/API.md#waypoints)
-9. [**Miscellaneous**](https://github.com/minetest-mods/i3/blob/main/API.md#miscellaneous)
+1. [**Tabs**](#tabs)
+2. [**Recipes**](#recipes)
+3. [**Minitabs**](#minitabs)
+4. [**Recipe filters**](#recipe-filters)
+5. [**Search filters**](#search-filters)
+6. [**Sorting methods**](#sorting-methods)
+7. [**Item list compression**](#item-list-compression)
+8. [**Waypoints**](#waypoints)
+9. [**Miscellaneous**](#miscellaneous)
 
 ---
 
@@ -175,7 +175,7 @@ Recipes can be registered from a given URL containing a JSON file (HTTP support 
 
 ```Lua
 i3.register_craft {
-	url = "https://raw.githubusercontent.com/minetest-mods/i3/main/tests/test_online_recipe.json"
+	url = "https://raw.githubusercontent.com/mt-historical/i3/main/tests/test_online_recipe.json"
 }
 ```
 
