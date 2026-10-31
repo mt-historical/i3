@@ -531,7 +531,7 @@ local function get_container(fs, data, player, yoffset, ctn_len, award_list, awa
 
 			fs([[ style[%s;padding=10;fgimg=%s;bgimg=%s;bgimg_hovered=i3_btn9_hovered.png;
 					bgimg_pressed=i3_btn9_pressed.png;bgimg_middle=4,6;sound=] ]],
-				btn_name, skin:get_preview(),
+				btn_name, ESC(skin:get_preview()),
 				skin.name == skin_name and "i3_btn9_hovered.png" or "i3_btn9.png")
 
 			local X = (i % 3) * 1.93
