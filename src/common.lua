@@ -81,7 +81,7 @@ local function utf8_len(str)
 	local c = 0
 
 	for _ in str:gmatch"[%z\1-\127\194-\244][\128-\191]*" do -- Arguably working duct-tape code
-		c++
+		c = c + 1
 	end
 
 	return c
@@ -135,7 +135,7 @@ local function search(data)
 						temp[item] = true
 					end
 
-					j++
+					j = j + 1
 				end
 			end
 		else
@@ -154,7 +154,7 @@ local function search(data)
 		end
 
 		if to_add then
-			c++
+			c = c + 1
 			filtered_list[c] = item
 		end
 	end
@@ -182,7 +182,7 @@ local function table_merge(t1, t2, hash)
 		local c = #t1
 
 		for i = 1, #t2 do
-			c++
+			c = c + 1
 			t1[c] = t2[i]
 		end
 	end
@@ -208,7 +208,7 @@ local function array_diff(t1, t2)
 	for i = 1, #t1 do
 		local v = t1[i]
 		if hash[v] then
-			c++
+			c = c + 1
 			diff[c] = v
 		end
 	end
@@ -435,7 +435,7 @@ local function craft_stack(player, data, craft_rcp)
 					if item == _name and remaining > 0 then
 						local c = min(remaining, _count)
 						items[item] = c
-						remaining -= c
+						remaining = remaining - c
 					end
 
 					if remaining == 0 then break end
@@ -474,7 +474,7 @@ local function craft_stack(player, data, craft_rcp)
 		local c = min(stackmax, leftover)
 		local stack = ItemStack(fmt("%s %s", stackname, c))
 		get_stack(player, stack)
-		leftover -= stackmax
+		leftover = leftover - stackmax
 	end
 end
 
@@ -490,7 +490,7 @@ local function safe_teleport(player, pos)
 	player:add_velocity(-vel)
 
 	local p = vec(pos)
-	      p.y += 0.25
+	      p.y = p.y + 0.25
 
 	player:set_pos(p)
 end
@@ -551,7 +551,7 @@ local function compress_items(list, start_i)
 				insert(special, stack)
 			else
 				hash[name] = hash[name] or 0
-				hash[name] += count
+				hash[name] = hash[name] + count
 			end
 		end
 	end
@@ -563,7 +563,7 @@ local function compress_items(list, start_i)
 
 		for _ = 1, iter do
 			insert(new_inv, ItemStack(fmt("%s %u", name, min(stackmax, leftover))))
-			leftover -= stackmax
+			leftover = leftover - stackmax
 		end
 	end
 

@@ -1,5 +1,5 @@
-IMPORT("max", "ceil", "remove", "str_to_pos")
-IMPORT("get_connected_players", "add_hud_waypoint")
+local max, ceil, remove, str_to_pos = i3.get("max", "ceil", "remove", "str_to_pos")
+local get_connected_players, add_hud_waypoint = i3.get("get_connected_players", "add_hud_waypoint")
 
 local function init_hud(player)
 	local name = player:get_player_name()
@@ -7,9 +7,9 @@ local function init_hud(player)
 	local wdesc_y = -90
 
 	if core.global_exists"hb" then
-		wdesc_y -= ceil(hb.hudbars_count / 2) * 5
+		wdesc_y = wdesc_y - ceil(hb.hudbars_count / 2) * 5
 	elseif not i3.settings.damage_enabled then
-		wdesc_y += 15
+		wdesc_y = wdesc_y + 15
 	end
 
 	data.hud = {
@@ -39,7 +39,7 @@ local function show_hud(player, data, notif, idx, dt)
 
 	if offset.y < notif.max.y then
 		notif.show = false
-		notif.hud_timer += dt
+		notif.hud_timer = notif.hud_timer + dt
 	end
 
 	player:hud_change(notif.elems.text, "text", notif.hud_msg)

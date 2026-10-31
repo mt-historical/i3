@@ -2,8 +2,8 @@ local set_fs = i3.set_fs
 local hud_notif = i3.hud_notif
 local POLL_FREQ = 0.25
 
-IMPORT("reg_items", "reg_nodes", "fmt", "table_merge", "array_diff")
-IMPORT("is_group", "extract_groups", "item_has_groups", "apply_recipe_filters", "sort_by_category")
+local reg_items, reg_nodes, fmt, table_merge, array_diff = i3.get("reg_items", "reg_nodes", "fmt", "table_merge", "array_diff")
+local is_group, extract_groups, item_has_groups, apply_recipe_filters, sort_by_category = i3.get("is_group", "extract_groups", "item_has_groups", "apply_recipe_filters", "sort_by_category")
 
 i3.remove_minitab"nodes"
 i3.remove_minitab"items"
@@ -29,7 +29,7 @@ local function get_filtered_items(player, data)
 
 		if recipes > 0 or usages > 0 then
 			items[item] = true
-			known += recipes + usages
+			known = known + recipes + usages
 		end
 	end
 
@@ -89,7 +89,7 @@ local function progressive_filter(recipes, player)
 	for i = 1, #recipes do
 		local recipe = recipes[i]
 		if recipe_in_inv(recipe, data.inv_items) then
-			c++
+			c = c + 1
 			filtered[c] = recipe
 		end
 	end
@@ -120,7 +120,7 @@ local function get_inv_items(player)
 		if not stack:is_empty() then
 			local name = stack:get_name()
 			if core.registered_items[name] then
-				c++
+				c = c + 1
 				inv_items[c] = name
 			end
 		end

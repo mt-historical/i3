@@ -1,10 +1,10 @@
 local replacements = {fuel = {}}
 local http = ...
 
-IMPORT("copy", "insert", "sort", "match", "sub")
-IMPORT("true_str", "is_table", "valid_item", "table_merge", "table_replace", "table_eq")
-IMPORT("fmt", "reg_items", "reg_aliases", "reg_nodes", "is_cube", "get_cube", "ItemStack")
-IMPORT("is_group", "extract_groups", "item_has_groups", "groups_to_items", "get_group_stereotype")
+local copy, insert, sort, match, sub = i3.get("copy", "insert", "sort", "match", "sub")
+local true_str, is_table, valid_item, table_merge, table_replace, table_eq = i3.get("true_str", "is_table", "valid_item", "table_merge", "table_replace", "table_eq")
+local fmt, reg_items, reg_aliases, reg_nodes, is_cube, get_cube, ItemStack = i3.get("fmt", "reg_items", "reg_aliases", "reg_nodes", "is_cube", "get_cube", "ItemStack")
+local is_group, extract_groups, item_has_groups, groups_to_items, get_group_stereotype = i3.get("is_group", "extract_groups", "item_has_groups", "groups_to_items", "get_group_stereotype")
 
 local function get_burntime(item)
 	return core.get_craft_result{method = "fuel", items = {item}}.time
@@ -49,7 +49,7 @@ local function cache_groups(group, groups)
 		if texture then
 			texture = texture:gsub("%^", "\\^"):gsub(":", "\\:") .. fmt("\\^[resize\\:%ux%u", px, px)
 			sprite = sprite .. fmt(":0,%u=%s", c * px, texture)
-			c++
+			c = c + 1
 			if c == lim then break end
 		end
 	end
@@ -145,7 +145,7 @@ local function drop_table(name, drop)
 		end
 
 		if not di.rarity then
-			count_sure++
+			count_sure = count_sure + 1
 		end
 	end
 end

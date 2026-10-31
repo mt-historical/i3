@@ -1,5 +1,5 @@
 local set_fs = i3.set_fs
-IMPORT("play_sound", "create_inventory")
+local play_sound, create_inventory = i3.get("play_sound", "create_inventory")
 
 local trash = create_inventory("i3_trash", {
 	allow_put = function(_, _, _, stack)

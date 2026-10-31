@@ -13,10 +13,9 @@ print[[
 local modpath = core.get_modpath"i3"
 local http = core.request_http_api and core.request_http_api()
 local storage = core.get_mod_storage()
-local _loadfile = dofile(modpath .. "/src/preprocessor.lua")
 
 local function lf(path)
-	return assert(_loadfile(modpath .. path))
+	return assert(loadfile(modpath .. path))
 end
 
 i3 = {
@@ -125,7 +124,6 @@ end
 if i3.settings.debug_mode then
 	lf("/tests/test_tabs.lua")()
 	lf("/tests/test_waypoints.lua")()
---	lf("/tests/test_operators.lua")()
 	lf("/tests/test_compression.lua")()
 	lf("/tests/test_custom_recipes.lua")()
 end

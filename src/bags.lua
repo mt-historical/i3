@@ -1,8 +1,8 @@
 local set_fs = i3.set_fs
 
-IMPORT("get_bag_description", "ItemStack")
-IMPORT("S", "FS", "fmt", "msg", "slz", "dslz")
-IMPORT("get_group", "play_sound", "get_detached_inv", "create_inventory")
+local get_bag_description, ItemStack = i3.get("get_bag_description", "ItemStack")
+local S, FS, fmt, msg, slz, dslz = i3.get("S", "FS", "fmt", "msg", "slz", "dslz")
+local get_group, play_sound, get_detached_inv, create_inventory = i3.get("get_group", "play_sound", "get_detached_inv", "create_inventory")
 
 local function get_content(content)
 	local t = {}
@@ -83,7 +83,7 @@ local function init_bags(player)
 				local stack = list[i]
 
 				if not stack:is_empty() then
-					c++
+					c = c + 1
 					t[i] = stack:to_string()
 				end
 			end

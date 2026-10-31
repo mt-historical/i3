@@ -1,12 +1,12 @@
 local http = ...
 local make_fs, get_inventory_fs = i3.files.gui()
 
-IMPORT("FS")
-IMPORT("sorter", "sort_inventory", "play_sound")
-IMPORT("sort", "concat", "copy", "insert", "remove")
-IMPORT("get_player_by_name", "add_hud_waypoint", "init_hud_notif")
-IMPORT("gmatch", "split", "S", "err", "fmt", "reg_items", "pos_to_str")
-IMPORT("true_str", "true_table", "is_str", "is_func", "is_table", "clean_name")
+local FS = i3.get("FS")
+local sorter, sort_inventory, play_sound = i3.get("sorter", "sort_inventory", "play_sound")
+local sort, concat, copy, insert, remove = i3.get("sort", "concat", "copy", "insert", "remove")
+local get_player_by_name, add_hud_waypoint, init_hud_notif = i3.get("get_player_by_name", "add_hud_waypoint", "init_hud_notif")
+local gmatch, split, S, err, fmt, reg_items, pos_to_str = i3.get("gmatch", "split", "S", "err", "fmt", "reg_items", "pos_to_str")
+local true_str, true_table, is_str, is_func, is_table, clean_name = i3.get("true_str", "true_table", "is_str", "is_func", "is_table", "clean_name")
 
 function i3.register_craft_type(name, def)
 	if not true_str(name) then
@@ -81,7 +81,7 @@ function i3.register_craft(def)
 		end
 
 		for symbol in gmatch(concat(def.grid), ".") do
-			c++
+			c = c + 1
 			def.items[c] = def.key[symbol]
 		end
 	else
@@ -105,7 +105,7 @@ function i3.register_craft(def)
 
 		for _, line in ipairs(lines) do
 			for _, v in ipairs(line) do
-				c++
+				c = c + 1
 				def.items[c] = clean_name(v)
 			end
 		end
@@ -402,7 +402,7 @@ function i3.add_waypoint(name, def)
 	})
 
 	if data.subcat == 5 then
-		data.scrbar_inv += 1000
+		data.scrbar_inv = data.scrbar_inv + 1000
 	end
 
 	i3.set_fs(player)

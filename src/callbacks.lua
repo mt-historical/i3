@@ -4,8 +4,8 @@ local fill_caches = i3.files.caches(http)
 local init_hud = i3.files.hud()
 local set_fs = i3.set_fs
 
-IMPORT("slz", "min", "insert", "copy", "ItemStack")
-IMPORT("spawn_item", "reset_data", "get_detached_inv", "play_sound", "update_inv_size")
+local slz, min, insert, copy, ItemStack = i3.get("slz", "min", "insert", "copy", "ItemStack")
+local spawn_item, reset_data, get_detached_inv, play_sound, update_inv_size = i3.get("spawn_item", "reset_data", "get_detached_inv", "play_sound", "update_inv_size")
 
 core.register_on_player_hpchange(function(player, hpchange)
 	local name = player:get_player_name()

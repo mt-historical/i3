@@ -1,13 +1,13 @@
 local set_fs = i3.set_fs
 
-IMPORT("min", "max", "vec_round")
-IMPORT("reg_items", "reg_aliases")
-IMPORT("sort", "copy", "insert", "remove", "indexof")
-IMPORT("S", "random", "translate", "compressible", "ItemStack")
-IMPORT("fmt", "find", "match", "sub", "lower", "split", "toupper")
-IMPORT("valid_item", "get_stack", "craft_stack", "clean_name", "check_privs", "safe_teleport")
-IMPORT("msg", "is_fav", "pos_to_str", "str_to_pos", "add_hud_waypoint", "play_sound", "reset_data")
-IMPORT("search", "sort_inventory", "sort_by_category", "get_recipes", "get_detached_inv", "update_inv_size")
+local min, max, vec_round = i3.get("min", "max", "vec_round")
+local reg_items, reg_aliases = i3.get("reg_items", "reg_aliases")
+local sort, copy, insert, remove, indexof = i3.get("sort", "copy", "insert", "remove", "indexof")
+local S, random, translate, compressible, ItemStack = i3.get("S", "random", "translate", "compressible", "ItemStack")
+local fmt, find, match, sub, lower, split, toupper = i3.get("fmt", "find", "match", "sub", "lower", "split", "toupper")
+local valid_item, get_stack, craft_stack, clean_name, check_privs, safe_teleport = i3.get("valid_item", "get_stack", "craft_stack", "clean_name", "check_privs", "safe_teleport")
+local msg, is_fav, pos_to_str, str_to_pos, add_hud_waypoint, play_sound, reset_data = i3.get("msg", "is_fav", "pos_to_str", "str_to_pos", "add_hud_waypoint", "play_sound", "reset_data")
+local search, sort_inventory, sort_by_category, get_recipes, get_detached_inv, update_inv_size = i3.get("search", "sort_inventory", "sort_by_category", "get_recipes", "get_detached_inv", "update_inv_size")
 
 local function inv_fields(player, data, fields)
 	local name = data.player_name
@@ -200,7 +200,7 @@ local function inv_fields(player, data, fields)
 			id    = id,
 		})
 
-		data.scrbar_inv += 1000
+		data.scrbar_inv = data.scrbar_inv + 1000
 
 	elseif fields.hide_debug_grid then
 		data.hide_debug_grid = not data.hide_debug_grid
@@ -260,7 +260,7 @@ local function select_item(player, data, fields)
 				for _, v in ipairs(items) do
 					if valid_item(reg_items[clean_name(v)]) then
 						insert(data.alt_items, idx + i, v)
-						i++
+						i = i + 1
 					end
 				end
 			end
@@ -346,7 +346,7 @@ local function rcp_fields(player, data, fields)
 
 	elseif fields.prev_page or fields.next_page then
 		if data.pagemax == 1 then return end
-		data.pagenum -= (fields.prev_page and 1 or -1)
+		data.pagenum = data.pagenum - (fields.prev_page and 1 or -1)
 
 		if data.pagenum > data.pagemax then
 			data.pagenum = 1
@@ -356,7 +356,7 @@ local function rcp_fields(player, data, fields)
 
 	elseif fields.prev_skin or fields.next_skin then
 		if data.skin_pagemax == 1 then return end
-		data.skin_pagenum -= (fields.prev_skin and 1 or -1)
+		data.skin_pagenum = data.skin_pagenum - (fields.prev_skin and 1 or -1)
 
 		if data.skin_pagenum > data.skin_pagemax then
 			data.skin_pagenum = 1
