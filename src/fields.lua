@@ -423,7 +423,7 @@ core.register_on_player_receive_fields(function(player, formname, fields)
 	local name = player:get_player_name()
 
 	if formname == "i3_outdated" then
-		return false, core.kick_player(name, S("Your Minetest client needs updating") .. " (www.minetest.net)")
+		return false, core.kick_player(name, S("Your Minetest/Luanti client needs updating") .. " (https://luanti.org)")
 	elseif formname ~= "" then
 		return false
 	end

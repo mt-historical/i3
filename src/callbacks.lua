@@ -195,7 +195,7 @@ end
 local function outdated(name)
 	core.show_formspec(name, "i3_outdated",
 		("size[6.5,1.3]image[0,0;1,1;i3_book.png]label[1,0;%s]button_exit[2.6,0.8;1,1;;OK]"):format(
-		"Your Minetest client is outdated.\nGet the latest version on minetest.net to play the game."))
+		"Your Minetest/Luanti client is outdated.\nGet the latest version on https://luanti.org to play the game."))
 end
 
 local function init_data(player, info)
